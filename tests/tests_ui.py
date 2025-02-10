@@ -14,7 +14,8 @@ scenarios(feature_file)
 @pytest.fixture
 def driver():
     options = Options()
-    # options.add_argument("--headless")  # Remove this if you want to see the browser
+    # Uncomment below if you want to run tests in headless mode
+    # options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     yield driver
@@ -30,7 +31,6 @@ TAB_XPATHS = [
     "//a[normalize-space()='Contact']"
 ]
 
-@given("the homepage is loaded")
 @given("the homepage is loaded")
 def load_homepage(driver):
     driver.get("http://www.arqiva.com")
@@ -53,6 +53,7 @@ def navigate_tabs(driver, start_index, end_index):
         time.sleep(2)  # Wait for the page to load
         print(f"Current URL: {driver.current_url}")
         assert driver.current_url != "http://www.arqiva.com", f"Failed to load tab: {tab_text}"
+
 @then("I should verify all tabs load correctly")
 def verify_all_tabs(driver):
-    pass  # This can be expanded for more specific checks if needed
+    pass
