@@ -72,7 +72,7 @@ def load_homepage(driver):
 
 @then('the title should be "Arqiva"')
 def check_homepage_title(driver):
-    assert "Arqiva" in driver.title, "Homepage did not load correctly"
+    assert "Arqiva" in driver.title, "Homepage did not load correctly!"
 
 
 @when(parsers.parse('I navigate through the main tabs from {start_index:d} to {end_index:d}'))
