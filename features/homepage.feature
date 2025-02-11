@@ -4,3 +4,4 @@ Feature: Arqiva website testing
     Then the title should be "Arqiva"
     When I navigate through the main tabs from 0 to 6
     Then I should verify all tabs load correctly
+    Then all tabs loaded successfully
